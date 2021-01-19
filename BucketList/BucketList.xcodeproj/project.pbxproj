@@ -12,6 +12,7 @@
 		55A7736425B665FE0097EC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A7736325B665FE0097EC51 /* Assets.xcassets */; };
 		55A7736725B665FE0097EC51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A7736625B665FE0097EC51 /* Preview Assets.xcassets */; };
 		55A7737025B6675D0097EC51 /* UserComparableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7736F25B6675D0097EC51 /* UserComparableView.swift */; };
+		55A7737325B66AA60097EC51 /* DocumentsWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		55A7736625B665FE0097EC51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55A7736825B665FE0097EC51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A7736F25B6675D0097EC51 /* UserComparableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComparableView.swift; sourceTree = "<group>"; };
+		55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsWritingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				55A7736825B665FE0097EC51 /* Info.plist */,
 				55A7736525B665FE0097EC51 /* Preview Content */,
 				55A7736F25B6675D0097EC51 /* UserComparableView.swift */,
+				55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				55A7737025B6675D0097EC51 /* UserComparableView.swift in Sources */,
 				55A7736225B665FA0097EC51 /* ContentView.swift in Sources */,
+				55A7737325B66AA60097EC51 /* DocumentsWritingView.swift in Sources */,
 				55A7736025B665FA0097EC51 /* BucketListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
