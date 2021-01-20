@@ -14,6 +14,7 @@
 		55A7737025B6675D0097EC51 /* UserComparableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7736F25B6675D0097EC51 /* UserComparableView.swift */; };
 		55A7737325B66AA60097EC51 /* DocumentsWritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */; };
 		55A7737625B670630097EC51 /* EnumeratedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7737525B670630097EC51 /* EnumeratedStateView.swift */; };
+		55A7737925B7CF1B0097EC51 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7737825B7CF1B0097EC51 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		55A7736F25B6675D0097EC51 /* UserComparableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComparableView.swift; sourceTree = "<group>"; };
 		55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsWritingView.swift; sourceTree = "<group>"; };
 		55A7737525B670630097EC51 /* EnumeratedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumeratedStateView.swift; sourceTree = "<group>"; };
+		55A7737825B7CF1B0097EC51 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				55A7736F25B6675D0097EC51 /* UserComparableView.swift */,
 				55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */,
 				55A7737525B670630097EC51 /* EnumeratedStateView.swift */,
+				55A7737825B7CF1B0097EC51 /* MapView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A7737025B6675D0097EC51 /* UserComparableView.swift in Sources */,
+				55A7737925B7CF1B0097EC51 /* MapView.swift in Sources */,
 				55A7736225B665FA0097EC51 /* ContentView.swift in Sources */,
 				55A7737325B66AA60097EC51 /* DocumentsWritingView.swift in Sources */,
 				55A7737625B670630097EC51 /* EnumeratedStateView.swift in Sources */,
