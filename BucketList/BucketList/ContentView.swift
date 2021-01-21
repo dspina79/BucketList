@@ -13,10 +13,12 @@ struct ContentView: View {
     @State private var isUnlocked = false
     @State private var centerCoordinate = CLLocationCoordinate2D()
     @State private var locations = [MKPointAnnotation]()
+    @State private var selectedPlace: MKPointAnnotation?
+    @State private var showingDetails = false
     
     var body: some View {
         ZStack {
-            MapView(centerCoordinate: $centerCoordinate, annotations: locations)
+            MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingDetails, annotations: locations)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             Circle()
                 .fill(Color.blue)
@@ -43,6 +45,11 @@ struct ContentView: View {
                             .padding(.trailing)
                     }
                 }
+            }
+            .alert(isPresented: $showingDetails){
+                Alert(title: Text(selectedPlace?.title ?? "Unknown Place"), message: Text(selectedPlace?.subtitle ?? "Missing Details"), primaryButton: .default(Text("Ok")), secondaryButton: .default(Text("Edit")){
+                    //edit this place
+                })
             }
         }
         
