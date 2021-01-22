@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5533D00525BA71F000F5FB64 /* KPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533D00425BA71F000F5FB64 /* KPointAnnotation-ObservableObject.swift */; };
+		5533D00825BA72FB00F5FB64 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5533D00725BA72FB00F5FB64 /* EditView.swift */; };
 		55A7736025B665FA0097EC51 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7735F25B665FA0097EC51 /* BucketListApp.swift */; };
 		55A7736225B665FA0097EC51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7736125B665FA0097EC51 /* ContentView.swift */; };
 		55A7736425B665FE0097EC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A7736325B665FE0097EC51 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5533D00425BA71F000F5FB64 /* KPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		5533D00725BA72FB00F5FB64 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		55A7735C25B665FA0097EC51 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A7735F25B665FA0097EC51 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		55A7736125B665FA0097EC51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				55A7737225B66AA60097EC51 /* DocumentsWritingView.swift */,
 				55A7737525B670630097EC51 /* EnumeratedStateView.swift */,
 				55A7737825B7CF1B0097EC51 /* MapView.swift */,
+				5533D00425BA71F000F5FB64 /* KPointAnnotation-ObservableObject.swift */,
+				5533D00725BA72FB00F5FB64 /* EditView.swift */,
 			);
 			path = BucketList;
 			sourceTree = "<group>";
@@ -150,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5533D00525BA71F000F5FB64 /* KPointAnnotation-ObservableObject.swift in Sources */,
 				55A7737025B6675D0097EC51 /* UserComparableView.swift in Sources */,
+				5533D00825BA72FB00F5FB64 /* EditView.swift in Sources */,
 				55A7737925B7CF1B0097EC51 /* MapView.swift in Sources */,
 				55A7736225B665FA0097EC51 /* ContentView.swift in Sources */,
 				55A7737325B66AA60097EC51 /* DocumentsWritingView.swift in Sources */,
