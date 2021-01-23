@@ -16,52 +16,63 @@ struct ContentView: View {
     @State private var selectedPlace: MKPointAnnotation?
     @State private var showingDetails = false
     
+    
     @State private var showingEditScreen = false
     
     var body: some View {
         ZStack {
-            MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingDetails, annotations: locations)
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            Circle()
-                .fill(Color.blue)
-                .opacity(0.3)
-                .frame(width: 32, height: 32)
-            
-            VStack {
-                Spacer()
-                HStack{
+            if isUnlocked {
+                MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingDetails, annotations: locations)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Circle()
+                    .fill(Color.blue)
+                    .opacity(0.3)
+                    .frame(width: 32, height: 32)
+                
+                VStack {
                     Spacer()
-                    Button(action: {
-                        let newLocation = CodableMKPointAnnotation()
-                        newLocation.title = "Example Location"
-                        newLocation.coordinate = self.centerCoordinate
-                        self.locations.append(newLocation)
-                        
-                        self.selectedPlace = newLocation
-                        self.showingEditScreen = true
-                        
-                    }) {
-                        Image(systemName: "plus")
-                            .padding()
-                            .background(Color.black.opacity(0.75))
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .clipShape(Circle())
-                            .padding(.trailing)
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            let newLocation = CodableMKPointAnnotation()
+                            newLocation.title = "Example Location"
+                            newLocation.coordinate = self.centerCoordinate
+                            self.locations.append(newLocation)
+                            
+                            self.selectedPlace = newLocation
+                            self.showingEditScreen = true
+                            
+                        }) {
+                            Image(systemName: "plus")
+                                .padding()
+                                .background(Color.black.opacity(0.75))
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .clipShape(Circle())
+                                .padding(.trailing)
+                        }
                     }
                 }
-            }
-            .alert(isPresented: $showingDetails){
-                Alert(title: Text(selectedPlace?.title ?? "Unknown Place"), message: Text(selectedPlace?.subtitle ?? "Missing Details"), primaryButton: .default(Text("Ok")), secondaryButton: .default(Text("Edit")){
-                    self.showingEditScreen = true
-                })
-            }
-            .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
-                if self.selectedPlace != nil {
-                    EditView(pointMark: self.selectedPlace!)
+                .alert(isPresented: $showingDetails){
+                    Alert(title: Text(selectedPlace?.title ?? "Unknown Place"), message: Text(selectedPlace?.subtitle ?? "Missing Details"), primaryButton: .default(Text("Ok")), secondaryButton: .default(Text("Edit")){
+                        self.showingEditScreen = true
+                    })
                 }
+                .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
+                    if self.selectedPlace != nil {
+                        EditView(pointMark: self.selectedPlace!)
+                    }
+                }
+                .onAppear(perform: loadData)
+            } else {
+                Button("Unlock") {
+                    authenticate()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
             }
-            .onAppear(perform: loadData)
         }
         
     }
@@ -97,18 +108,19 @@ struct ContentView: View {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "We need to unlock your data."
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {success, authenticationError in
+            let reason = "Please authenticate yourself to unlock places."
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason){ success, authenticationError in
                 DispatchQueue.main.async {
                     if success {
-                        self.isUnlocked = true
+                        isUnlocked  = true
                     } else {
-                        // there's a problem
+                        // error
                     }
                 }
             }
-        }  else {
-            // there's no biometrics
+        } else {
+            // no biometrics
         }
     }
 }
