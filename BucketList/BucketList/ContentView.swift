@@ -11,7 +11,8 @@ import MapKit
 
 struct ContentView: View {
     @State private var isUnlocked = false
-
+    @State private var showBiometricErrors = false
+    @State private var biometricError: String = "Unknown biometric error"
     
     var body: some View {
         ZStack {
@@ -26,6 +27,8 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .clipShape(Capsule())
             }
+        }.alert(isPresented: $showBiometricErrors) {
+            Alert(title: Text("Biometric Error"), message: Text(self.biometricError), dismissButton: .default(Text("Understood")))
         }
         
     }
@@ -42,12 +45,14 @@ struct ContentView: View {
                     if success {
                         isUnlocked  = true
                     } else {
-                        // error
+                        self.biometricError = "The facial ID recognition failed. Cannot unlock."
+                        self.showBiometricErrors = true
                     }
                 }
             }
         } else {
-            // no biometrics
+            self.biometricError = "Authentication failure: " + (error?.localizedDescription ?? "Uknown error")
+            self.showBiometricErrors = true
         }
     }
 }

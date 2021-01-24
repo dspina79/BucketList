@@ -16,7 +16,7 @@ struct CompositeMapView: View {
     @State private var showingEditScreen = false
     
     var body: some View {
-        MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingDetails, annotations: locations)
+        MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingEditScreen, annotations: locations)
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         Circle()
             .fill(Color.blue)
